@@ -63,13 +63,13 @@ this_load() {
    if [ "${TC_VERSION%%.*}" = "4" ]; then
      local ext="${EXTENSION%.tcz}@@"
      ext="${ext/squashfs-tools@@/squashfs-tools-4.x}"
-     ext="${ext/openssl@@/openssl-1.0.0}"
-     ext="${ext/openssl-dev@@/openssl-1.0.0-dev}"
+     ext="${ext/openssl@@/openssl}"
+     ext="${ext/openssl-dev@@/openssl-dev}"
      EXTENSION="${ext%@@}"
    fi
    if [ "${TC_VERSION%%.*}" -ge "6" ]; then
      EXTENSION="${EXTENSION/squashfs-tools-4.x/squashfs-tools}"
-     EXTENSION="${EXTENSION/openssl-1.0.0/openssl}"
+     EXTENSION="${EXTENSION/openssl/openssl}"
    fi
    EXTENSION_TCZ="${EXTENSION%.tcz}.tcz"
    EXTENSION_NAME="${EXTENSION_TCZ%%.tcz}"
